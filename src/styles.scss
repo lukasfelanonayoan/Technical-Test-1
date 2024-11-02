@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url(assets/image/background.png);
+  background-size: contain;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+input:disabled,
+select:disabled {
+  opacity: 1;
+  background: white;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.z-head {
+  z-index: 10;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.table-emp{
+  overflow-x: auto;
+}
+
+.table-emp tr {
+  border: 1px solid black;
+}
+
+.table-emp td:nth-child(odd),
+.table-emp th:nth-child(odd) {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
+.table-emp td:nth-child(even),
+.table-emp th:nth-child(even) {
+  background-color: rgba(9, 255, 0, 0.5);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

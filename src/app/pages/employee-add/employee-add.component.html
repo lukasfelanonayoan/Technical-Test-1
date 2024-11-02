@@ -1,0 +1,158 @@
+<div class="container py-3">
+  <div class="row">
+    <div class="w-100 px-3 d-flex justify-content-center">
+      <form
+        class="p-md-5 p-3 col-md-6 col-12 form"
+        [formGroup]="addForm"
+        (submit)="submitAdd()"
+      >
+        <h1 class="mb-0 pb-2 text-center">Add Employee</h1>
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Username</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              type="text"
+              class="w-100 px-2"
+              name="username"
+              formControlName="username"
+              placeholder="Username"
+            />
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Name</div>
+          <div class="d-flex ps-md-3 col-md-9 col-12 pe-0">
+            <div class="ps-0 col-6">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="firstName"
+                formControlName="firstName"
+                placeholder="First name"
+              />
+            </div>
+            <div class="ps-0 col-6 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="lastName"
+                formControlName="lastName"
+                placeholder="Last name"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Email</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              type="email"
+              class="w-100 px-2"
+              name="email"
+              formControlName="email"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Birthday</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              class="w-100 px-2"
+              type="text" formControlName="birthDate"
+              (focus)="focusType($event, 'focus')"
+              (blur)="focusType($event, 'blur')"
+              formControlName="birthDate"
+              placeholder="Choose Date"
+              max="{{ this.maxDate }}"
+            />
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Salary</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              id="salary-id"
+              type="text"
+              class="w-100 px-2"
+              name="basicSalary"
+              (blur)="onChangeHandler($event)"
+              (focus)="onFocus($event)"
+              min="1000000"
+              max="20000000"
+              formControlName="basicSalary"
+              placeholder="Salary"
+            />
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Status</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              type="text"
+              class="w-100 px-2"
+              name="status"
+              formControlName="status"
+              placeholder="status"
+            />
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Group</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <select
+              class="w-100 px-2 py-1"
+              formControlName="group"
+              name="group"
+            >
+              <option value="" selected hidden>Choose Group</option>
+              <option value="Group1">Group1</option>
+              <option value="Group2">Group2</option>
+              <option value="Group3">Group3</option>
+              <option value="Group4">Group4</option>
+              <option value="Group5">Group5</option>
+              <option value="Group6">Group6</option>
+              <option value="Group7">Group7</option>
+              <option value="Group8">Group8</option>
+              <option value="Group9">Group9</option>
+              <option value="Group10">Group10</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+          <div class="col-md-3 col-12 px-0">Description</div>
+          <div class="ps-md-3 col-md-9 col-12 pe-0">
+            <input
+              class="w-100 px-2"
+              type="text" formControlName="birthDate"
+              (focus)="focusType($event, 'focus')"
+              (blur)="focusType($event, 'blur')"
+              formControlName="description"
+              placeholder="Choose Date"
+              max="{{ this.maxDate }}"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-between pt-3">
+          <div>
+            <button
+              class="btn btn-danger"
+              type="button"
+              [routerLink]="['/employee']"
+            >
+              Cancel
+            </button>
+          </div>
+          <div><button class="btn btn-info" type="submit">Save</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

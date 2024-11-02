@@ -1,0 +1,22 @@
+<div
+  class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center top-0"
+>
+  <div class="col-md-3 col-12">
+    <form
+      class="p-md-5 p-3 text-center form"
+      [formGroup]="loginForm"
+      (submit)="submitLogin()"
+    >
+      <h1 class="mb-0 pb-2">Login</h1>
+      <div class="pb-2">Username</div>
+      <div class="pb-3">
+        <input type="text" name="username" formControlName="username" />
+      </div>
+      <div class="pb-2">Password</div>
+      <div class="pb-3">
+        <input type="password" name="password" formControlName="password" />
+      </div>
+      <div><button class="btn btn-success" type="submit">Login</button></div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="position-sticky top-0 z-head bg-white">
+  <div class="container px-4 py-3">
+    <div class="d-flex justify-content-end" *ngIf="getStatus(); else elseBlock">
+      <div class="px-3 cursor-pointer" [routerLink]="['/employee/']">
+        Home
+      </div>
+      <div class="px-3 cursor-pointer" (click)="setStatus()">
+        Log Out
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <div class="row justify-content-end">
+        <div class="px-3 cursor-pointer" [routerLink]="['/']">Log in</div>
+      </div>
+    </ng-template>
+  </div>
+</div>

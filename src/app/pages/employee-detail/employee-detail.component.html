@@ -1,0 +1,145 @@
+<div class="container py-3">
+    <div class="row">
+      <div class="w-100 px-3 d-flex justify-content-center">
+        <form class="p-md-5 p-3 col-md-6 col-12 form">
+          <h1 class="mb-0 pb-2 text-center">Detail Employee</h1>
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Username</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="username"
+                placeholder="Username"
+                value="{{ employees.username }}"
+                disabled
+              />
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Name</div>
+            <div class="d-flex ps-md-3 col-md-9 col-12 pe-0">
+              <div class="ps-0 col-6">
+                <input
+                  type="text"
+                  class="w-100 px-2"
+                  name="firstName"
+                  placeholder="First name"
+                  value="{{ employees.firstName }}"
+                  disabled
+                />
+              </div>
+              <div class="ps-0 col-6 pe-0">
+                <input
+                  type="text"
+                  class="w-100 px-2"
+                  name="lastName"
+                  placeholder="Last name"
+                  value="{{ employees.lastName }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Email</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="email"
+                placeholder="Email"
+                value="{{ employees.email }}"
+                disabled
+              />
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Birthday</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                class="w-100 px-2"
+                name="birthDate"
+                placeholder="Choose Date"
+                value="{{ dateType(employees.birthDate) }}"
+                disabled
+              />
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Salary</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="basicSalary"
+                placeholder="Salary"
+                value="{{ changeRP(employees.basicSalary) }}"
+                disabled
+              />
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Status</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="status"
+                placeholder="Status"
+                value="{{ employees.status }}"
+                disabled
+              />
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Group</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <select class="w-100 px-2 py-1" name="group" disabled>
+                <option value="" hidden>Choose Group</option>
+                <option
+                  *ngFor="let e of [].constructor(10); let i = index"
+                  [selected]="employees.group == 'Group' + i"
+                  value="Group{{ i }}"
+                >
+                  Group{{ i }}
+                </option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="d-md-flex pb-2 justify-content-between w-100 py-2">
+            <div class="col-md-3 col-12 px-0">Description</div>
+            <div class="ps-md-3 col-md-9 col-12 pe-0">
+              <input
+                type="text"
+                class="w-100 px-2"
+                name="description"
+                placeholder="Description"
+                value="{{ dateType(employees.description) }}"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-end pt-3">
+            <div>
+              <button
+                class="btn btn-success"
+                type="button"
+                [routerLink]="['/employee']"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
