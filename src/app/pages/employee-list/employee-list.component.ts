@@ -8,7 +8,6 @@ import { EmployeeService } from 'src/app/services/employee.service';
   styleUrls: ['./employee-list.component.scss'],
 })
 export class EmployeeListComponent {
-  hardCodeFill: boolean = true;
   page = EmployeeService.page;
   employees: any = EmployeeService.getEmployee();
   search = EmployeeService.search;
@@ -39,26 +38,6 @@ export class EmployeeListComponent {
   }
 
   ngOnInit(): void {
-    if (this.hardCodeFill && this.employees.total == 0) {
-      let dummyID = 100;
-      for (let i = 0; i < dummyID; i++) {
-        
-        let dateTemp = new Date();
-        let data = {
-          username: 'Dummy ' + (i+1),
-          firstName: 'First ' + (i+1),
-          lastName: 'Last ' + (i+1),
-          email: 'email' + (i+1) + '@domain.com',
-          birthDate: dateTemp,
-          basicSalary: 300000,
-          status: 'dummy',
-          group: 'Group7',
-          description: dateTemp,
-        };
-        EmployeeService.addEmployee(data);
-      }
-    }
-
     this.employees = EmployeeService.getEmployee();
   }
 

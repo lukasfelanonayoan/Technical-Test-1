@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmployeeService } from 'src/app/services/employee.service';
-import { Employee } from 'src/app/employee';
 
 @Component({
   selector: 'app-employee-detail',
